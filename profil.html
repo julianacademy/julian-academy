@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Mahasiswa – Muhamad Juliana</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxxxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary: #228b22; /* hijau */
+            --light-green: #e6f9f9;
+            --text-dark: #0d0d0d;
+            --text-muted: #555;
+            --card-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+         body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        }
+
+        .kepala{
+        display: grid;
+        grid-template-columns: 200px auto 200px ;
+        background-color: white;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 10px;
+        height: 110px;
+      }
+
+      .logo{
+        background-color: rgb(0, 200, 255);
+        text-align: left;
+      }
+      .nama{
+        padding-top: 20px;
+        background-color: rgb(0, 200, 255);
+        color: white;
+      }
+
+      .login{
+        background-color: rgb(0, 200, 255);
+        color: white;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    
+      nav ul {
+        list-style: none;
+        padding: 0;
+        padding-top: 20px;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            background: url(bg3.jpg) center/cover no-repeat; /* ganti dengan foto latar anda */
+            height: 330px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* overlay gelap untuk kontras teks */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .hero-content {
+            position: relative; /* supaya di atas overlay */
+            color: #fff;
+            padding-top: 210px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--light-green);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .bawah h4{
+          padding-bottom: 20px;
+        }
+        /* foto profil bulat */
+        .profile-img {
+            position: absolute;
+            top: 50px; /* sesuaikan agar separuh menempel di hero */
+            width: 160px;
+            height: 160px;
+            border: 6px solid #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #ccc;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== SECTION PROFIL SINGKAT ===== */
+        .info-section {
+            background: var(--light-green);
+            padding: 100px 130px 60px; /* extra top padding karena foto profil overlapping */
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #0066ff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title i {
+            font-size: 1.6rem;
+            padding-left: 10px;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: var(--card-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 1rem;
+        }
+
+        .info-item i {
+            font-size: 1.25rem;
+            margin-top: 2px;
+            color: var(--primary);
+        }
+
+        .info-item span {
+            font-weight: 600;
+        }
+
+        .story-section {
+    background: #ffffff;
+    padding: 60px 130px;
+}
+
+.story-card {
+    background: var(--light-green);
+    border-radius: var(--card-radius);
+    padding: 30px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-card p {
+    margin-bottom: 1.2rem;
+}
+
+.quote-box {
+    background: #22798b;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quote-box i {
+    font-size: 1.5rem;
+}
+.bawah{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding-top: 20px;
+        padding-left: 20px;
+        background-color: rgb(75, 126, 141)
+    }
+    .bawah p{
+      padding: 10px;
+    }
+ ::-webkit-scrollbar{
+        display: none;
+      }
+@media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+            .story-section {
+        padding: 40px 20px;
+    }
+
+    .story-card {
+        padding: 20px;
+    }
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="kepala">
+      <div class="logo"><img src="Logo julian academy.png" width="100">
+      </div>
+        <div class="nama">
+          <h1>Julian's Academy</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>|</li>
+              <li><a href="tryout.html">Quiz</a></li>
+              <li>|</li>
+              <li><a href="profil.html">About me</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="login">
+          <h4 style="background-color: orange;border-radius: 40px;"><a href="daftar.html" target="_blank" style="text-decoration: none; color: white;">Masuk/Daftar</a></h4>
+      </div>
+    </div>
+  </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 style="color: rgb(0, 200, 255);">Muhamad Juliana</h1>
+            <p>E1R02310068 – Universitas Mataram</p>
+        </div>
+        <div class="profile-img">
+            <img src="profil.jpg" alt="Foto Profil" /> <!-- ganti avatar.jpg -->
+        </div>
+      </div>
+
+    <section class="info-section">
+        <h2 class="section-title"><i class="fa-solid fa-user"></i>Profil Singkat</h2>
+        <div class="profile-card">
+          <div style="text-align: start;">
+            <div class="info-item"><i class="fa-solid fa-address-card"></i> <span>Nama:</span>&nbsp;Muhamad Juliana</div><br>
+            <div class="info-item"><i class="fa-solid fa-location-dot"></i> <span>Asal:</span>&nbsp;Dompu</div><br>
+            <div class="info-item"><i class="fa-solid fa-id-card"></i> <span>NIM:</span>&nbsp;E1R02310068</div>
+          </div>
+          <div style="text-align: end;">
+            <div class="info-item"><i class="fa-solid fa-cake-candles"></i> <span>Tanggal Lahir:</span>&nbsp;22 Juli 2005</div><br>
+            <div class="info-item"><i class="fa-solid fa-school"></i> <span>Prodi:</span>&nbsp;Pendidikan Matematika</div><br>
+            <div class="info-item"><i class="fa-solid fa-phone"></i> <span>Email:</span>&nbsp;muhamadjuliana22@gmail.com</div>
+          </div>
+        </div>
+    </section>
+    <section class="story-section">
+  <h2 class="section-title"><i class="fa-solid fa-book-open"></i>Cerita Pemilik</h2>
+  <div class="story-card">
+    <p>
+      Halo! Saya <strong>Muhamad Juliana</strong>, seorang mahasiswa Pendidikan Matematika di Universitas Mataram.
+      Sejak kecil saya suka logika dan angka—itulah yang membawa saya ke dunia matematika.
+      Melalui <strong>Julian Academy</strong>, saya ingin berbagi semangat belajar, terutama dalam bidang sains dan teknologi.
+      Saya percaya bahwa pembelajaran yang interaktif dan menyenangkan bisa membuat siapa saja jatuh cinta pada ilmu.
+    </p>
+    <p>
+      Website ini saya buat untuk membantu adik-adik tingkat saya memahami konsep-konsep sulit selama dalam masa perkuliahannya dengan memberikan dan membagi semua hal yang saya punya selama masa perkuliahan saya secara visual dan mudah dipahami. Mari belajar bersama dan jadi
+      generasi problem solver yang kreatif!
+    </p>
+    <div class="quote-box">
+      <i class="fa-solid fa-quote-left"></i>
+      <span>"Janganlah mengejar kesuksesan, tapi kejarlah ilmu dan relasi maka kesuksesan akan menghampiri"</span>
+    </div>
+  </div>
+</section>
+<div class="bawah" style="text-align: center;">
+      <div class="satu" >
+       <h4>Hubungi Pemilik</h4>
+       <p>Email: muhamadjuliana22@gmail.com</p>
+       <p>Program Studi Pendidikan Matematika FKIP,<br>Universitas Mataram</p>
+       <p>Alamat : Jl. Majapahit No. 62 Kota Mataram</p>
+       <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
+      </div>
+      <div class="dua">
+        <h4>Ikuti Pemilik</h4>
+        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="social.png" alt="IG" width="50px"></a><br>
+        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X" width="50px"></a><br>
+      </div>
+    </div>
+</body>
+</html>

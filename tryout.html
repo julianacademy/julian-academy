@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kuis Operasi Matematika</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+    .kepala{
+        display: grid;
+        grid-template-columns: 200px auto 200px ;
+        background-color: white;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .logo{
+        background-color: rgb(0, 200, 255);
+        text-align: left;
+      }
+      .nama{
+        background-color: rgb(0, 200, 255);
+        color: white;
+      }
+      .login{
+        background-color: rgb(0, 200, 255);
+        color: white;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .question {
+      background-color: white;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .question p {
+      text-align: center;
+      margin: 5px 0;
+      font-weight: 600;
+    }
+
+    .question input {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      padding: 12px 24px;
+      background-color: #ff9f43;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff6f00;
+    }
+
+    .lanjut {
+      padding: 12px 24px;
+      background-color: rgb(0, 200, 255);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .lanjut a {
+      text-decoration: none;
+      color: white;
+    }
+    .lanjut:hover {
+      background-color: #2980b9;
+    }
+
+    .result {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2ed573;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .bawah{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding-left: 20px;
+        background-color: rgb(75, 126, 141)
+    }
+    @media (max-width: 600px) {
+      .question input {
+        font-size: 14px;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+    }
+    ::-webkit-scrollbar{
+        display: none;
+      }
+  </style>
+
+  <script>
+let soalList = [];
+
+let jawabanBenar = [];
+
+function generateRandomSoal() {
+  const operasi = ['+', '-', '*'];
+  soalList = [];
+  jawabanBenar = [];
+
+  for (let i = 0; i < 5; i++) {
+    let a = Math.floor(Math.random() * 50) + 1; 
+    let b = Math.floor(Math.random() * 50) + 1;
+    let op = operasi[Math.floor(Math.random() * operasi.length)];
+    let pertanyaan = `${a} ${op} ${b}`;
+    let jawaban = eval(pertanyaan);
+
+    soalList.push(pertanyaan);
+    jawabanBenar.push(jawaban);
+  }
+}
+
+function tampilkanSoal() {
+  const container = document.getElementById("soal-container");
+  container.innerHTML = ''; 
+
+  soalList.forEach((soal, index) => {
+    container.innerHTML += `
+      <div class="question">
+        <p>Soal ${index + 1}</p>
+        <p><strong>${soal} = ?</strong></p>
+        <input type="number" name="soal${index}" required>
+      </div>
+    `;
+  });
+}
+
+function calculateScore() {
+  let score = 0;
+
+  for (let i = 0; i < soalList.length; i++) {
+    let input = document.querySelector(`input[name="soal${i}"]`);
+    if (input && parseInt(input.value) === jawabanBenar[i]) {
+      score++;
+    }
+  }
+
+  document.getElementById("result").innerText = `Nilai Anda: ${score}/5`;
+  return false;
+}
+
+window.onload = function () {
+  generateRandomSoal();
+  tampilkanSoal();
+};
+  </script>
+</head>
+<body>
+  <div class="kepala">
+      <div class="logo"><img src="Logo julian academy.png" width="100">
+      </div>
+        <div class="nama">
+          <h1>Julian's Academy</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>|</li>
+              <li><a href="tryout.html">Quiz</a></li>
+              <li>|</li>
+              <li><a href="profil.html">About me</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="login">
+          <h4 style="background-color: orange;border-radius: 40px;"><a href="daftar.html" target="_blank" style="text-decoration: none; color: white;">Masuk/Daftar</a></h4>
+      </div>
+    </div>
+
+  <div class="container">
+    <form id="quiz-form" class="submit" onsubmit="return calculateScore()">
+      <div id="soal-container"></div>
+      <button class="lanjut"><a href="tryout.html">Refresh</a></button>
+      <button type="submit" class="submit-btn">Submit Jawaban</button>
+    </form>
+    <div class="result" id="result"></div>
+    <a href="quizgeo.html"><Button class="lanjut">Lanjut ke quiz 2</Button></a>
+  </div>
+  <div class="bawah" style="text-align: center;">
+      <div class="satu" >
+       <h4>Hubungi Pemilik</h4>
+       <p>Email: muhamadjuliana22@gmail.com</p>
+       <p>Program Studi Pendidikan Matematika FKIP,<br>Universitas Mataram</p>
+       <p>Alamat : Jl. Majapahit No. 62 Kota Mataram</p>
+       <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
+      </div>
+      <div class="dua">
+        <h4>Ikuti Pemilik</h4>
+        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="social.png" alt="IG" width="50px"></a><br>
+        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X" width="50px"></a><br>
+      </div>
+    </div>
+</body>
+</html>

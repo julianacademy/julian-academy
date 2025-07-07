@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kuis Random</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+    .kepala{
+        display: grid;
+        grid-template-columns: 200px auto 200px ;
+        background-color: white;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .logo{
+        background-color: rgb(0, 200, 255);
+        text-align: left;
+      }
+      .nama{
+        background-color: rgb(0, 200, 255);
+        color: white;
+      }
+      .login{
+        background-color: rgb(0, 200, 255);
+        color: white;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px 0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: rgb(0, 200, 255);
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      align-items: center;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #feedback {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .bawah{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding-left: 20px;
+        background-color: rgb(75, 126, 141)
+    }
+  </style>
+</head>
+<body>
+ <div class="kepala">
+      <div class="logo"><img src="Logo julian academy.png" width="100">
+      </div>
+        <div class="nama">
+          <h1>Julian's Academy</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>|</li>
+              <li><a href="tryout.html">Quiz</a></li>
+              <li>|</li>
+              <li><a href="profil.html">About me</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="login">
+          <h4 style="background-color: orange;border-radius: 40px;"><a href="daftar.html" target="_blank" style="text-decoration: none; color: white;">Masuk/Daftar</a></h4>
+      </div>
+    </div>
+
+  <div class="container">
+    <img id="quiz-image" src="" alt="Soal Matematika" />
+    <div id="options"></div>
+    <p id="feedback"></p>
+    <img id="solution-image" src="" alt="Penyelesaian" style="display: none; max-width: 100%; margin-top: 20px; border: 2px solid #ccc; border-radius: 8px;" />
+  </div>
+
+  <div style="text-align: center;">
+    <a href="quizgeo.html"><button>Refresh</button></a>
+    <a href="tryout.html"><button>Kembali ke Quiz 1</button></a>
+  </div>
+
+  <div class="bawah" style="text-align: center;">
+    <div class="satu" >
+      <h4>Hubungi Pemilik</h4>
+      <p>Email: muhamadjuliana22@gmail.com</p>
+      <p>Program Studi Pendidikan Matematika FKIP,<br>Universitas Mataram</p>
+      <p>Alamat : Jl. Majapahit No. 62 Kota Mataram</p>
+      <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
+    </div>
+    <div class="dua">
+      <h4>Ikuti Pemilik</h4>
+      <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="social.png" alt="IG" width="50px"></a><br>
+      <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X" width="50px"></a><br>
+    </div>
+  </div>
+
+  <script>
+    const quizzes = [
+      {
+        image: "matriks.png",
+        options: ["5", "-2", "7", "8"],
+        answer: "5",
+        solutionImage: "matriksjwb.png"
+      },
+      {
+        image: "limit.png",
+        options: ["0", "1", "3", "tidak ada limit"],
+        answer: "3",
+        solutionImage: "limitjwb.png"
+      },
+      {
+        image: "limit2.png",
+        options: ["0", "3/5", "1", "∞"],
+        answer: "3/5",
+        solutionImage: "limit2jwb.png"
+      },
+      {
+        image: "deret.png",
+        options: ["45", "30", "48", "60"],
+        answer: "45",
+        solutionImage: "deretjwb.png"
+      },
+      {
+        image: "integral.png",
+        options: ["Sin(x^2) + C", "xSin(x) + C", "Cos(x^2) + C", "2sin(x) + C"],
+        answer: "Sin(x^2) + C",
+        solutionImage: "integraljwb.png"
+      },
+      {
+        image: "integral2.png",
+        options: ["2", "5/3", "4/3", "3"],
+        answer: "4/3",
+        solutionImage: "integral2jwb.png"
+      },
+      {
+        image: "himpunan.png",
+        options: ["{1,2,3,4,5}", "{1,2,4,5}", "{3}", "{1,2,3}"],
+        answer: "{1,2,3,4,5}",
+        solutionImage: "himpunanjwb.png"
+      },
+      {
+        image: "turunan2.png",
+        options: ["cos(x^2)", "2xCos(x^2)", "2xSin(x^2)", "Cos(2x)"],
+        answer: "2xCos(x^2)",
+        solutionImage: "turunan2jwb.png"
+      },
+      {
+        image: "aljabar.png",
+        options: ["2 dan 3", "-2 dan -3", "1 dan 6", "5 dan 6"],
+        answer: "2 dan 3",
+        solutionImage: "aljabarjwb.png"
+      },
+      {
+        image: "peluang.png",
+        options: ["1/2", "2/3", "1/3", "1/6"],
+        answer: "1/3",
+        solutionImage: "peluangjwb.png"
+      },
+      {
+        image: "wkwk.png",
+        options: ["farid", "bahtiar", "aldi", "julian"],
+        answer: "julian",
+      },
+      {
+        image: "turunan.png",
+        options: ["x^2ln(x)", "3x^2ln(x) + x^2", "x^3 + x", "3ln(x)"],
+        answer: "3x^2ln(x) + x^2",
+        solutionImage: "turunanjwb.png"
+      },
+    ];
+
+    const randomQuiz = quizzes[Math.floor(Math.random() * quizzes.length)];
+    document.getElementById("quiz-image").src = randomQuiz.image;
+
+    const optionsDiv = document.getElementById("options");
+    randomQuiz.options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.textContent = option;
+      btn.onclick = () => checkAnswer(option);
+      optionsDiv.appendChild(btn);
+    });
+
+    function checkAnswer(selected) {
+      const feedback = document.getElementById("feedback");
+      const solutionImg = document.getElementById("solution-image");
+
+      if (selected === randomQuiz.answer) {
+        feedback.textContent = "✅ Benar!";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = "❌ Salah! Jawaban benar: "+ randomQuiz.answer;
+        feedback.style.color = "red";
+      }
+
+      if (randomQuiz.solutionImage) {
+        solutionImg.src = randomQuiz.solutionImage;
+        solutionImg.style.display = "block";
+      } else {
+        solutionImg.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

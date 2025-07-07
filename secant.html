@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Metode Secant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+    }
+  
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .Metode {
+      display: grid;
+      text-align: center;
+      background-color: rgb(0, 200, 255);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .isi {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      margin-bottom: 5px;
+      gap: 5px;
+    }
+
+    .isikiri, .isikanan {
+        background-color: rgb(0, 200, 255);
+        padding: 20px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px;
+    }
+
+    table {
+      text-align: center;
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="Metode">
+    <h1>Mencari Hampiran Akar Dengan Metode Secant</h1>
+    <nav>
+      <ul>
+        <li><a href="bagidua.html">Bagi Dua</a></li>
+        <li><a href="secant.html">Secant</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="isi">
+    <div class="isikiri">
+      <label>Fungsi f(x): <input type="text" id="fx" placeholder="contoh: x^4-2" /></label><br>
+      <label>Nilai X₀: <input type="number" id="x0" step="any" /></label><br>
+      <label>Nilai X₁: <input type="number" id="x1" step="any" /></label><br>
+      <label>ε (Toleransi Error): <input type="number" step="any" id="epsilon" placeholder="contoh: 0.0001" /></label><br>
+      <label>Maksimum Iterasi: <input type="number" id="maxIter" /></label><br>
+      <button onclick="calculate()">Cari akar</button>
+      <button onclick="hapusInput()">Hapus</button>
+    </div> 
+    <div class="isikanan" id="ggb-element"></div>
+  </div>
+
+  <div class="kotak">
+    <table id="hasil">
+      <thead>
+        <tr>
+          <th>n</th>
+          <th>Xₙ₋₁</th>
+          <th>Xₙ</th>
+          <th>f(Xₙ₋₁)</th>
+          <th>f(Xₙ)</th>
+          <th>Nₙ</th>
+          <th>Dₙ</th>
+          <th>Xₙ₊₁</th>
+          <th>|Xₙ - Xₙ₋₁|</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+  <script>
+    function UbahFungsi(input) {
+      return input.replace(/([a-zA-Z0-9\.]+)\s*\^\s*([0-9]+)/g, 'Math.pow($1, $2)'); 
+    }
+
+    function konversiUntukGeoGebra(fx) {
+      return fx
+        .replace(/\*\*/g, "^")
+        .replace(/Math\.pow\(([^,]+),([^)]+)\)/g, '$1^$2')
+        .replace(/Math\./g, '');
+    }
+
+    function calculate() { 
+      const fxInput = document.getElementById("fx").value;
+      const x0 = parseFloat(document.getElementById("x0").value);
+      const x1 = parseFloat(document.getElementById("x1").value);
+      const tol = parseFloat(document.getElementById("epsilon").value);
+      const maxIter = parseInt(document.getElementById("maxIter").value);
+      
+      let f;
+      try {
+        f = new Function("x", "return " + UbahFungsi(fxInput));
+        f(1);
+      } catch (err) {
+        alert("Fungsi tidak valid!");
+        return;
+      }
+
+      let results = [];
+      let xn_1 = x0; 
+      let xn = x1;
+      let n = 0;
+
+      const tbody = document.querySelector("#hasil tbody");
+      tbody.innerHTML = "";
+
+      while (n < maxIter) {
+        const fxn_1 = f(xn_1);
+        const fxn = f(xn);
+        const Nn = fxn * (xn_1 - xn);
+        const Dn = fxn_1 - fxn;
+        if (Dn === 0) break;
+
+        const xn1 = xn - Nn / Dn;
+        const err = Math.abs(xn - xn_1);
+
+        tbody.innerHTML += `
+          <tr>
+            <td>${n}</td>
+            <td>${xn_1.toFixed(6)}</td>
+            <td>${xn.toFixed(6)}</td>
+            <td>${fxn_1.toFixed(6)}</td>
+            <td>${fxn.toFixed(6)}</td>
+            <td>${Nn.toFixed(6)}</td>
+            <td>${Dn.toFixed(6)}</td>
+            <td>${xn1.toFixed(6)}</td>
+            <td>${err.toFixed(6)}</td>
+          </tr>
+        `;
+
+        if (err < tol) break; 
+        xn_1 = xn;
+        xn = xn1;
+        n++;
+      }
+
+      tampilkanGeoGebra(fxInput);
+    }
+
+    function hapusInput() {
+      document.getElementById("fx").value = "";
+      document.getElementById("x0").value = "";
+      document.getElementById("x1").value = "";
+      document.getElementById("epsilon").value = "";
+      document.getElementById("maxIter").value = "";
+    }
+
+    function tampilkanGeoGebra(fx) {
+      const ekspresiGeoGebra = konversiUntukGeoGebra(fx);
+
+      const params = {
+        "appName": "graphing",
+        "width": 800,
+        "height": 400,
+      };
+      const container = document.getElementById("ggb-element");
+      container.innerHTML = "";
+
+      const app = new GGBApplet(params, true);
+      app.inject("ggb-element");
+
+      setTimeout(() => {
+        try {
+          const ggb = app.getAppletObject();
+          ggb.evalCommand("f(x) =" + ekspresiGeoGebra);
+        } catch (e) {
+          alert("Fungsi tidak valid untuk GeoGebra.");
+        }
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
