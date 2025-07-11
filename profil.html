@@ -31,33 +31,58 @@
         background-color: #f5f5f5;
         }
 
-        .kepala{
-        display: grid;
-        grid-template-columns: 200px auto 200px ;
-        background-color: white;
-        margin-bottom: 10px;
-        text-align: center;
-        margin-top: 10px;
-        height: 110px;
-      }
+        .kepala {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #00c8fff4;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      flex-wrap: nowrap;
+    }
 
-      .logo{
-        background-color: rgb(0, 200, 255);
-        text-align: left;
-      }
-      .nama{
-        padding-top: 20px;
-        background-color: rgb(0, 200, 255);
-        color: white;
-      }
+    .logo img {
+      height: 80px;
+      width: auto;
+    }
 
-      .login{
-        background-color: rgb(0, 200, 255);
-        color: white;
-        padding-top: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+    .nama {
+      flex: 1;
+      text-align: center;
+      color: white;
+      padding-left: 10px;
+    }
+
+    .nama h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .nama nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 5px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .nama nav ul li {
+      display: inline;
+    }
+
+    .nama nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login img {
+      padding-right: 10px;
+      height: 40px;
+      width: auto;
+    }
     
       nav ul {
         list-style: none;
@@ -234,7 +259,17 @@
  ::-webkit-scrollbar{
         display: none;
       }
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+  .kepala {
+        align-items: center;
+      }
+      .nama{
+        padding-right: 20px;
+      }
+
+      .nama nav ul {
+        gap: 5px;
+      }
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -253,12 +288,12 @@
     </style>
 </head>
 <body>
-  <header>
     <div class="kepala">
-      <div class="logo"><img src="Logo julian academy.png" width="100">
+        <div class="logo">
+        <a href="index.html"><img src="Logo julian academy.png" width="100"></a>
       </div>
         <div class="nama">
-          <h1>Julian's Academy</h1>
+          <h1>Julian Academy</h1>
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
@@ -270,10 +305,9 @@
           </nav>
         </div>
         <div class="login">
-          <h4 style="background-color: orange;border-radius: 40px;"><a href="daftar.html" target="_blank" style="text-decoration: none; color: white;">Masuk/Daftar</a></h4>
+          <h4><a href="daftar.html"><img src="login.png" alt="login/daftar"></a></h4>
       </div>
     </div>
-  </header>
     <div class="hero">
         <div class="hero-content">
             <h1 style="color: rgb(0, 200, 255);">Muhamad Juliana</h1>
