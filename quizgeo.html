@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="update logo kuadrat.png" type="image/png">
   <title>Kuis Random</title>
   <style>
     body {
@@ -24,29 +25,30 @@
     }
 
     .logo img {
-      height: 80px;
+      padding-left: 1em;
+      height: 3em;
       width: auto;
     }
 
     .nama {
-      flex: 1;
+      padding-right: 4.5em;
       text-align: center;
       color: white;
-      padding-left: 10px;
     }
 
     .nama h1 {
+      padding-bottom: 0.2em;
       margin: 0;
-      font-size: 24px;
+      font-size: 1.5em;
     }
 
     .nama nav ul {
       list-style: none;
       padding: 0;
-      margin: 5px 0 0 0;
+      margin: 0.3125em 0 0 0;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 3em;
     }
 
     .nama nav ul li {
@@ -60,46 +62,34 @@
     }
 
     .login img {
-      padding-right: 10px;
-      height: 40px;
+      padding-right: 0.625em;
+      height: 2.5em;
       width: auto;
     }
-      nav ul {
-        list-style: none;
-        padding: 0;
-      }
-      nav ul li {
-        display: inline;
-        margin: 0 15px;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
 
     .container {
-      padding: 20px;
-      max-width: 600px;
+      padding: 1.25em;
+      max-width: 40em;
       margin: auto;
       background-color: white;
-      margin-top: 50px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 3.125em;
+      border-radius: 0.625em;
+      box-shadow: 0 0 0.625em rgba(0,0,0,0.1);
       text-align: center;
+      
     }
 
     .container img {
       width: 100%;
-      max-width: 500px;
-      margin: 20px 0;
+      max-width: 31.25em;
+      margin: 1.25em 0;
       border: 2px solid #ccc;
       border-radius: 8px;
     }
 
     button {
-      margin: 10px;
-      padding: 10px 20px;
+      margin: 0.625em;
+      padding: 0.625em 1.25em;
       border: none;
       background-color: rgb(0, 200, 255);
       color: white;
@@ -115,33 +105,74 @@
 
     #feedback {
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 1.25em;
     }
 
     .bawah{
         display: grid;
         grid-template-columns: 50% 50%;
-        padding-left: 20px;
-        background-color: rgb(75, 126, 141)
-    }
+        padding-left: 1.25em;
+        background-color: rgb(38, 60, 70)
+      }
+
+      .bawah p {
+        color: rgb(143, 143, 143);
+      }
+
+      .bawah h4 {
+        color: white;
+      }
+
+      .dua img {
+        padding: 0.3125em;
+        height: 2em;
+        width: auto;
+      }
+      ::-webkit-scrollbar{
+        display: none;
+      }
+      html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
     @media (max-width: 768px) {
   .kepala {
         align-items: center;
+        flex-direction: row;
+      }
+      .logo{
+      justify-content: left;
+      }
+      .logo img{
+      height: 2em;
+      width: auto;
       }
       .nama{
-        padding-right: 20px;
+        padding-right: 1.25em;
       }
 
       .nama nav ul {
-        gap: 5px;
+        gap: 0px 1.1875em;
       }
+      .login img{
+        height: 2em;
+        width: auto;
+      }
+      .bawah {
+      padding: 0.625em;
+      text-align: center;
+      grid-template-columns: 1fr;
+    }
         }
   </style>
 </head>
 <body>
  <div class="kepala">
         <div class="logo">
-        <a href="index.html"><img src="Logo julian academy.png" width="100"></a>
+        <a href="index.html"><img src="update logo.png" width="100"></a>
       </div>
         <div class="nama">
           <h1>Julian Academy</h1>
@@ -151,7 +182,7 @@
               <li>|</li>
               <li><a href="tryout.html">Quiz</a></li>
               <li>|</li>
-              <li><a href="profil.html">About me</a></li>
+              <li><a href="profil.html">About</a></li>
             </ul>
           </nav>
         </div>
@@ -164,7 +195,7 @@
     <img id="quiz-image" src="" alt="Soal Matematika" />
     <div id="options"></div>
     <p id="feedback"></p>
-    <img id="solution-image" src="" alt="Penyelesaian" style="display: none; max-width: 100%; margin-top: 20px; border: 2px solid #ccc; border-radius: 8px;" />
+    <img id="solution-image" src="" alt="Penyelesaian" style="display: none; max-width: 100%; margin-top: 1.25em; border: 2px solid #ccc; border-radius: 8px;" />
   </div>
 
   <div style="text-align: center;">
@@ -173,19 +204,18 @@
   </div>
 
   <div class="bawah" style="text-align: center;">
-    <div class="satu" >
-      <h4>Hubungi Pemilik</h4>
-      <p>Email: muhamadjuliana22@gmail.com</p>
-      <p>Program Studi Pendidikan Matematika FKIP,<br>Universitas Mataram</p>
-      <p>Alamat : Jl. Majapahit No. 62 Kota Mataram</p>
-      <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
+      <div class="satu" >
+       <h4>Julian Academy</h4>
+       <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
+      </div>
+      <div class="dua">
+        <h4>Ikuti Pemilik</h4>
+        <p>email: muhamadjuliana22@gmail.com</p>
+        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="sosial.png" alt="IG"></a>
+        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X"></a>
+        <a href="https://wa.me/+6282339684554" target="_blank"><img src="whatsapp.png" alt="whatsapp"></a>
+      </div>
     </div>
-    <div class="dua">
-      <h4>Ikuti Pemilik</h4>
-      <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="social.png" alt="IG" width="50px"></a><br>
-      <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X" width="50px"></a><br>
-    </div>
-  </div>
 
   <script>
     const quizzes = [
