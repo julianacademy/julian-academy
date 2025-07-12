@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="update logo kuadrat.png" type="image/png">
   <title>Kuis Operasi Matematika</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -28,29 +29,30 @@
     }
 
     .logo img {
-      height: 80px;
+      padding-left: 1em;
+      height: 3em;
       width: auto;
     }
 
     .nama {
-      flex: 1;
+      padding-right: 4.5em;
       text-align: center;
       color: white;
-      padding-left: 10px;
     }
 
     .nama h1 {
+      padding-bottom: 0.2em;
       margin: 0;
-      font-size: 24px;
+      font-size: 1.5em;
     }
 
     .nama nav ul {
       list-style: none;
       padding: 0;
-      margin: 5px 0 0 0;
+      margin: 0.3125em 0 0 0;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 3em;
     }
 
     .nama nav ul li {
@@ -64,40 +66,27 @@
     }
 
     .login img {
-      padding-right: 10px;
-      height: 40px;
+      padding-right: 0.625em;
+      height: 2.5em;
       width: auto;
     }
-      nav ul {
-        list-style: none;
-        padding: 0;
-      }
-      nav ul li {
-        display: inline;
-        margin: 0 15px;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
     .container {
       max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
+      margin: 1.875em auto;
+      padding: 1.25em;
     }
 
     .question {
       background-color: white;
-      padding: 15px 20px;
-      margin-bottom: 15px;
-      border-radius: 10px;
+      padding: 1em 1.25em;
+      margin-bottom: 1em;
+      border-radius: 0.625em;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
     }
 
     .question p {
       text-align: center;
-      margin: 5px 0;
+      margin: 0.3125em 0;
       font-weight: 600;
     }
 
@@ -111,7 +100,7 @@
     }
 
     .submit-btn {
-      padding: 12px 24px;
+      padding: 12px 1.5em;
       background-color: #ff9f43;
       color: white;
       border: none;
@@ -127,7 +116,7 @@
     }
 
     .lanjut {
-      padding: 12px 24px;
+      padding: 12px 1.5em;
       background-color: rgb(0, 200, 255);
       color: white;
       border: none;
@@ -150,32 +139,66 @@
       font-size: 22px;
       font-weight: bold;
       color: #2ed573;
-      margin-top: 30px;
+      margin-top: 1.875em;
       text-align: center;
     }
     .bawah{
         display: grid;
         grid-template-columns: 50% 50%;
-        padding-left: 20px;
-        background-color: rgb(75, 126, 141)
-    }
+        padding-left: 1.25em;
+        background-color: rgb(38, 60, 70)
+      }
+
+      .bawah p {
+        color: rgb(143, 143, 143);
+      }
+
+      .bawah h4 {
+        color: white;
+      }
+
+      .dua img {
+        padding: 0.3125em;
+        height: 2.5em;
+        width: auto;
+      }
     @media (max-width: 768px) {
       .kepala {
         align-items: center;
+        flex-direction: row;
+      }
+      .logo{
+      justify-content: left;
+      }
+      .logo img{
+      height: 2em;
+      width: auto;
       }
       .nama{
-        padding-right: 20px;
+        padding-right: 1.25em;
       }
 
       .nama nav ul {
-        gap: 5px;
+        gap: 0px 1.1875em;
       }
+      .login img{
+        height: 2em;
+        width: auto;
+      }
+
       .question input {
         font-size: 14px;
       }
 
+      .bawah {
+      padding: 0.625em;
+      text-align: center;
+      grid-template-columns: 1fr;
+    }
+
       .submit-btn {
         width: 30%;
+        height: auto;
       }
     }
     ::-webkit-scrollbar{
@@ -243,7 +266,7 @@ window.onload = function () {
 <body>
   <div class="kepala">
         <div class="logo">
-        <a href="index.html"><img src="Logo julian academy.png" width="100"></a>
+        <a href="index.html"><img src="update logo.png" width="100"></a>
       </div>
         <div class="nama">
           <h1>Julian Academy</h1>
@@ -253,7 +276,7 @@ window.onload = function () {
               <li>|</li>
               <li><a href="tryout.html">Quiz</a></li>
               <li>|</li>
-              <li><a href="profil.html">About me</a></li>
+              <li><a href="profil.html">About</a></li>
             </ul>
           </nav>
         </div>
@@ -266,24 +289,25 @@ window.onload = function () {
     <form id="quiz-form" class="submit" onsubmit="return calculateScore()">
       <div id="soal-container"></div>
       <button class="lanjut"><a href="tryout.html">Refresh</a></button>
-      <button type="submit" class="submit-btn">Submit Jawaban</button>
+      <button type="submit" class="submit-btn">periksa</button>
     </form>
     <div class="result" id="result"></div>
     <a href="quizgeo.html"><Button class="lanjut">Lanjut ke quiz 2</Button></a>
   </div>
+
   <div class="bawah" style="text-align: center;">
       <div class="satu" >
-       <h4>Hubungi Pemilik</h4>
-       <p>Email: muhamadjuliana22@gmail.com</p>
-       <p>Program Studi Pendidikan Matematika FKIP,<br>Universitas Mataram</p>
-       <p>Alamat : Jl. Majapahit No. 62 Kota Mataram</p>
+       <h4>Julian Academy</h4>
        <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
       </div>
       <div class="dua">
         <h4>Ikuti Pemilik</h4>
-        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="social.png" alt="IG" width="50px"></a><br>
-        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X" width="50px"></a><br>
+        <p>email: muhamadjuliana22@gmail.com</p>
+        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="sosial.png" alt="IG"></a>
+        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X"></a>
+        <a href="https://wa.me/+6282339684554" target="_blank"><img src="whatsapp.png" alt="whatsapp"></a>
       </div>
     </div>
+
 </body>
 </html>
