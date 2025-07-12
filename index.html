@@ -11,6 +11,7 @@
       margin: 0;
       padding: 0;
       background-color: #f5f5f5;
+      overflow-x: hidden;
       }
 
     .kepala {
@@ -123,9 +124,10 @@
       }
       .materi{
         display: grid;
-        grid-template-columns: 9.375em auto 9.375em ;
-        background-color: white;
-        color: rgb(255, 255, 255);
+        text-align: center;
+        color: white;
+        background-color: rgb(0, 200, 255);
+        margin-top: 0.625em;
         margin-bottom: 0.625em;
       }
     
@@ -217,50 +219,18 @@
         transform: translateY(-0.625em);
         box-shadow: 0 0.625em 20.3125em rgba(0, 0, 0, 0.6)
       }
-      .inter{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        gap: 5em;
-      }
-      .m1{
-        background-color: white;
-        margin-left: 17%;
-        margin-right: 13%;
-        padding: 1.25em;
-        border-radius: 1.25em;
-        color: gray;
-      }
-      .m2{
-        background-color: white;
-        margin-right: 30%;
-        padding: 1.25em;
-        border-radius: 1.25em;
-        color: gray;
-      }
-      .m1:hover{
-        transform: translateY(-0.625em);
-        box-shadow: 0 0.625em 20.3125em rgba(0, 0, 0, 0.6)
-      }
-      .m2:hover{
-        transform: translateY(-0.625em);
-        box-shadow: 0 0.625em 20.3125em rgba(0, 0, 0, 0.6)
-      }
-      .c1{
-        background-color: white;
-        margin: 0 35% 0 35%;
-        padding: 1.25em;
-        border-radius: 1.25em;
-        color: gray;
-      }
-      .c1:hover{
-        transform: translateY(-0.625em);
-        box-shadow: 0 0.625em 20.3125em rgba(0, 0, 0, 0.6)
-      }
 
        @media (max-width: 768px) {
     .kepala {
         align-items: center;
         flex-direction: row;
+      }
+      .logo{
+      justify-content: left;
+      }
+      .logo img{
+      height: 2em;
+      width: auto;
       }
       .nama{
         padding-right: 1.25em;
@@ -269,7 +239,10 @@
       .nama nav ul {
         gap: 0px 1.1875em;
       }
-
+      .login img{
+        height: 2em;
+        width: auto;
+      }
     .menu {
       flex-direction: row;
       display: block;
@@ -303,15 +276,6 @@
     .kelas {
       align-items: center;
       background-size: auto;
-    }
-
-    .inter {
-      gap: 1.25em;
-    }
-
-    .m1, .m2, .c1 {
-      margin: 0.625em auto;
-      width: 90%;
     }
 
     .bawah {
@@ -402,16 +366,8 @@
 <p>Farid Arrahman</p>
     </div>
   </div>
-    <div class="materi" id="materi" >
-      <div style="background-color:rgb(0, 200, 255);margin-top: 0.625em;">
+    <div class="materi" id="materi"><h2>Pilih Semester</h2></div>
 
-      </div>
-      <div style="background-color:rgb(0, 200, 255);margin-top: 0.625em;text-align: center;">
-        <h2>Pilih Semester</h2>
-      </div>
-      <div style="background-color:rgb(0, 200, 255);margin-top: 0.625em;">
-      </div>
-    </div>
     <div class="kelas">
       <div onclick="tombolsubmenu('semester1')">Semester 1</div>
       <div onclick="tombolsubmenu('semester2')">Semester 2</div>
