@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Mahasiswa – Muhamad Juliana</title>
+    <link rel="icon" href="update logo kuadrat.png" type="img/png">
+    <title>Muhamad Juliana</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -15,7 +16,7 @@
             --light-green: #e6f9f9;
             --text-dark: #0d0d0d;
             --text-muted: #555;
-            --card-radius: 8px;
+            --card-radius: 0.5em;
         }
 
         * {
@@ -40,32 +41,33 @@
       top: 0;
       z-index: 999;
       flex-wrap: nowrap;
+      padding: 1em 0;
     }
 
     .logo img {
-      height: 80px;
+      padding-left: 1em;
+      height: 3em;
       width: auto;
     }
 
     .nama {
-      flex: 1;
+      padding-right: 4.5em;
       text-align: center;
       color: white;
-      padding-left: 10px;
     }
 
     .nama h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 1.5em;
     }
 
     .nama nav ul {
       list-style: none;
       padding: 0;
-      margin: 5px 0 0 0;
+      margin: 0.3125em 0 0 0;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 1em;
     }
 
     .nama nav ul li {
@@ -79,19 +81,19 @@
     }
 
     .login img {
-      padding-right: 10px;
-      height: 40px;
+      padding-right: 0.625em;
+      height: 2.5em;
       width: auto;
     }
     
       nav ul {
         list-style: none;
         padding: 0;
-        padding-top: 20px;
+        padding-top: 1.25em;
       }
       nav ul li {
         display: inline;
-        margin: 0 15px;
+        margin: 0 1em;
       }
       nav ul li a {
         color: white;
@@ -102,7 +104,7 @@
         .hero {
             position: relative;
             background: url(bg3.jpg) center/cover no-repeat; /* ganti dengan foto latar anda */
-            height: 330px;
+            height: 20.62em;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -121,7 +123,7 @@
         .hero-content {
             position: relative; /* supaya di atas overlay */
             color: #fff;
-            padding-top: 210px;
+            padding-top: 13.625em;
         }
 
         .hero h1 {
@@ -136,15 +138,34 @@
             font-weight: 300;
         }
 
-        .bawah h4{
-          padding-bottom: 20px;
-        }
+        .bawah{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding-left: 1.25em;
+        background-color: rgb(38, 60, 70)
+      }
+
+      .bawah p {
+        color: rgb(143, 143, 143);
+        padding-bottom: 1em;
+      }
+
+      .bawah h4 {
+        color: white;
+        padding: 1em;
+      }
+
+      .dua img {
+        height: 2em;
+        width: auto;
+      }
+
         /* foto profil bulat */
         .profile-img {
             position: absolute;
-            top: 50px; /* sesuaikan agar separuh menempel di hero */
-            width: 160px;
-            height: 160px;
+            top: 3.125em; /* sesuaikan agar separuh menempel di hero */
+            width: 10em;
+            height: 10em;
             border: 6px solid #fff;
             border-radius: 50%;
             overflow: hidden;
@@ -160,7 +181,7 @@
         /* ===== SECTION PROFIL SINGKAT ===== */
         .info-section {
             background: var(--light-green);
-            padding: 100px 130px 60px; /* extra top padding karena foto profil overlapping */
+            padding: 6.25em 8.125em 3.75em; /* extra top padding karena foto profil overlapping */
         }
 
         .section-title {
@@ -175,18 +196,18 @@
 
         .section-title i {
             font-size: 1.6rem;
-            padding-left: 10px;
+            padding-left: 0.625em;
         }
 
         .profile-card {
             background: #fff;
             border-radius: var(--card-radius);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            max-width: 1000px;
+            box-shadow: 0 4px 0.625em rgba(0, 0, 0, 0.05);
+            max-width: 62.5em;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 1.875em 2.5em;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(23.75em, 1fr));
             gap: 1.2rem 2rem;
         }
 
@@ -209,18 +230,18 @@
 
         .story-section {
     background: #ffffff;
-    padding: 60px 130px;
+    padding: 3.75em 8.125em;
 }
 
 .story-card {
     background: var(--light-green);
     border-radius: var(--card-radius);
-    padding: 30px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.875em 2.5em;
+    box-shadow: 0 4px 1.25em rgba(0, 0, 0, 0.05);
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-dark);
-    max-width: 1000px;
+    max-width: 62.5em;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -233,43 +254,79 @@
 .quote-box {
     background: #22798b;
     color: white;
-    padding: 20px 30px;
+    padding: 1.25em 1.875em;
     border-radius: 8px;
     font-style: italic;
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 20px;
+    margin-top: 1.25em;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .quote-box i {
     font-size: 1.5rem;
+    padding-left: 2.8em;
 }
-.bawah{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        padding-top: 20px;
-        padding-left: 20px;
-        background-color: rgb(75, 126, 141)
-    }
-    .bawah p{
-      padding: 10px;
-    }
+
  ::-webkit-scrollbar{
         display: none;
       }
+
 @media (max-width: 768px) {
   .kepala {
-        align-items: center;
-      }
-      .nama{
-        padding-right: 20px;
-      }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 0em;
+    height: 5em;
+  }
 
-      .nama nav ul {
-        gap: 5px;
-      }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logo img {
+    height: 2em;
+    width: auto;
+  }
+
+  .nama {
+    padding: 0;
+    padding-right: 0.5em;
+    flex: 1;
+    text-align: center;
+  }
+
+  .nama h1 {
+    font-size: 1.6em;
+    padding-bottom: 0.2em;
+  }
+
+  .nama nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25em; 
+    padding: 0;
+    margin: 0.3em 0 0 0;
+  }
+
+  .nama nav ul li {
+    margin: 0;
+  }
+
+  .nama nav ul li a {
+    font-size: 1em;
+  }
+
+  .login img {
+    height: 2em;
+    width: auto;
+  }
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -277,12 +334,50 @@
             .hero p {
                 font-size: 1rem;
             }
-            .story-section {
-        padding: 40px 20px;
+
+            .info-section {
+    padding: 80px 1.5em 40px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    justify-content: center;
+  }
+
+  .profile-img {
+    top: 5em;
+    height: 8em;
+    width: 8em;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    padding: 1.5em;
+    text-align: center;
+  }
+
+  .profile-card > div {
+    text-align: center;
+  }
+
+  .info-item {
+    justify-content: start;
+  }
+
+    .story-section {
+        padding: 2.5em 1.25em;
     }
 
     .story-card {
-        padding: 20px;
+        padding: 1.25em;
+    }
+    .quote-box i {
+    padding: 0;
+}
+    .bawah {
+      padding: 0.625em;
+      text-align: center;
+      grid-template-columns: 1fr;
     }
         }
     </style>
@@ -290,7 +385,7 @@
 <body>
     <div class="kepala">
         <div class="logo">
-        <a href="index.html"><img src="Logo julian academy.png" width="100"></a>
+        <a href="index.html"><img src="update logo.png" width="100"></a>
       </div>
         <div class="nama">
           <h1>Julian Academy</h1>
@@ -300,7 +395,7 @@
               <li>|</li>
               <li><a href="tryout.html">Quiz</a></li>
               <li>|</li>
-              <li><a href="profil.html">About me</a></li>
+              <li><a href="profil.html">About</a></li>
             </ul>
           </nav>
         </div>
@@ -321,7 +416,7 @@
     <section class="info-section">
         <h2 class="section-title"><i class="fa-solid fa-user"></i>Profil Singkat</h2>
         <div class="profile-card">
-          <div style="text-align: start;">
+          <div class="cihuy">
             <div class="info-item"><i class="fa-solid fa-address-card"></i> <span>Nama:</span>&nbsp;Muhamad Juliana</div><br>
             <div class="info-item"><i class="fa-solid fa-location-dot"></i> <span>Asal:</span>&nbsp;Dompu</div><br>
             <div class="info-item"><i class="fa-solid fa-id-card"></i> <span>NIM:</span>&nbsp;E1R02310068</div>
@@ -333,37 +428,37 @@
           </div>
         </div>
     </section>
+
     <section class="story-section">
   <h2 class="section-title"><i class="fa-solid fa-book-open"></i>Cerita Pemilik</h2>
   <div class="story-card">
     <p>
       Halo! Saya <strong>Muhamad Juliana</strong>, seorang mahasiswa Pendidikan Matematika di Universitas Mataram.
-      Sejak kecil saya suka logika dan angka—itulah yang membawa saya ke dunia matematika.
-      Melalui <strong>Julian Academy</strong>, saya ingin berbagi semangat belajar, terutama dalam bidang sains dan teknologi.
+      Sejak kecil saya suka logika dan angka itulah yang membawa saya ke dunia matematika.
+      Melalui <strong>Julian Academy</strong>, saya ingin berbagi semangat belajar terutama dalam bidang matematika, sains, dan teknologi.
       Saya percaya bahwa pembelajaran yang interaktif dan menyenangkan bisa membuat siapa saja jatuh cinta pada ilmu.
     </p>
     <p>
-      Website ini saya buat untuk membantu adik-adik tingkat saya memahami konsep-konsep sulit selama dalam masa perkuliahannya dengan memberikan dan membagi semua hal yang saya punya selama masa perkuliahan saya secara visual dan mudah dipahami. Mari belajar bersama dan jadi
-      generasi problem solver yang kreatif!
+      Website ini saya buat untuk membantu teman-teman dan adik-adik tingkat saya supaya dapat memahami konsep-konsep matematika selama dalam masa perkuliahannya dengan memberikan dan membagi semua hal yang saya punya selama masa perkuliahan saya secara visual dan mudah dipahami. Mari belajar bersama dan jadi
+      generasi problem solver yang kreatif dan peka akan teknologi!
     </p>
     <div class="quote-box">
       <i class="fa-solid fa-quote-left"></i>
-      <span>"Janganlah mengejar kesuksesan, tapi kejarlah ilmu dan relasi maka kesuksesan akan menghampiri"</span>
+      <span>"Jika ingin bersenang-senang tanpa harus melihat harga, teruslah belajar tanpa melihat waktu."</span>
     </div>
   </div>
 </section>
 <div class="bawah" style="text-align: center;">
       <div class="satu" >
-       <h4>Hubungi Pemilik</h4>
-       <p>Email: muhamadjuliana22@gmail.com</p>
-       <p>Program Studi Pendidikan Matematika FKIP,<br>Universitas Mataram</p>
-       <p>Alamat : Jl. Majapahit No. 62 Kota Mataram</p>
+       <h4>Julian Academy</h4>
        <p>© Julian Academy | Semua Hak Dilindungi<br>Penggunaan situs ini tunduk pada syarat dan ketentuan.</p>
       </div>
       <div class="dua">
         <h4>Ikuti Pemilik</h4>
-        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="social.png" alt="IG" width="50px"></a><br>
-        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X" width="50px"></a><br>
+        <p>email: muhamadjuliana22@gmail.com</p>
+        <a href="https://www.instagram.com/julyyywithy/profilecard/?igsh=aHFoaHUwNW1vbjVy" target="_blank"><img src="sosial.png" alt="IG"></a>
+        <a href="https://x.com/Julyyy_Belajar?t=KEVzlMrGha1Bn5bNFjfeqQ&s=09" target="_blank"><img src="XX.png" alt="X"></a>
+        <a href="https://wa.me/+6282339684554" target="_blank"><img src="whatsapp.png" alt="whatsapp"></a>
       </div>
     </div>
 </body>
